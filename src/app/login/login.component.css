@@ -1,0 +1,11 @@
+#login-div{
+	padding: 15px;
+	max-width: 400px;
+
+	background: #ebebeb;
+	text-align: center;
+}
+#login-form input {
+	display: block;
+	margin: 15px;
+}
