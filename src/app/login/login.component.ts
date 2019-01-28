@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  loggedin = false;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -27,9 +29,14 @@ export class LoginComponent implements OnInit {
         username: form.form.value.username,
         password: form.form.value.password
       }
-    ).subscribe((val) => {
-      console.log(val);
-    });
+    ).subscribe(
+      res => { console.log(res); },
+      err => { 
+        if(err.error.text=="gay"){
+          this.loggedin=true;
+        }
+      }
+    );
   }
 
 }
